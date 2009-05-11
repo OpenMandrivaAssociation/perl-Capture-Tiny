@@ -1,6 +1,6 @@
 
 %define realname   Capture-Tiny
-%define version    0.05
+%define version    0.06
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
