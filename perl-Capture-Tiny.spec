@@ -1,25 +1,25 @@
+%define upstream_name    Capture-Tiny
+%define upstream_version 0.07
 
-%define realname   Capture-Tiny
-%define version    0.06
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Capture STDOUT and STDERR from Perl, XS or external programs
-Source:     http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Exporter)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(File::Temp)
 BuildRequires: perl(IO::Handle)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl-devel
 
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Capture::Tiny provides a simple, portable way to capture anything sent to
@@ -33,17 +33,15 @@ This module was heavily inspired by the IO::CaptureOutput manpage, which
 provides similar functionality without the ability to tee output and with
 more complicated code and API.
 
-
-
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %buildroot
@@ -57,5 +55,3 @@ rm -rf %buildroot
 %doc README Changes LICENSE
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
