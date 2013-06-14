@@ -1,9 +1,9 @@
 %define upstream_name    Capture-Tiny
-%define upstream_version 0.08
+%define upstream_version 0.22
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 5
+Release:    1
 
 Summary:    Capture STDOUT and STDERR from Perl, XS or external programs
 License:    GPL+ or Artistic
@@ -19,7 +19,6 @@ BuildRequires: perl(Module::Build::Compat)
 BuildRequires: perl-devel
 
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Capture::Tiny provides a simple, portable way to capture anything sent to
@@ -44,14 +43,9 @@ more complicated code and API.
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes LICENSE
 %{_mandir}/man3/*
 %perl_vendorlib/*
