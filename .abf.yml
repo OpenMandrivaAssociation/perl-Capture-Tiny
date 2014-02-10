@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   Capture-Tiny-0.22.tar.gz: 8bc6a4df4fd6543440799868db7fd0b740ad2c39
+sources:
+  Capture-Tiny-0.24.tar.gz: 1832229da007eb1a38d2418a7e1a35b8affb5d43
