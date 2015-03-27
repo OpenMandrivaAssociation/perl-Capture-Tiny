@@ -1,10 +1,10 @@
 %define upstream_name    Capture-Tiny
-%define upstream_version 0.27
+%define upstream_version 0.28
 
 Summary:	Capture STDOUT and STDERR from Perl, XS or external programs
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -33,7 +33,7 @@ more complicated code and API.
 %setup -qn %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
