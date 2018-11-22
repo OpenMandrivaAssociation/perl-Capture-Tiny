@@ -1,13 +1,13 @@
 %define upstream_name    Capture-Tiny
-%define upstream_version 0.27
+%define upstream_version 0.48
 
 Summary:	Capture STDOUT and STDERR from Perl, XS or external programs
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		http://metacpan.org/pod/Capture::Tiny
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
