@@ -7,7 +7,7 @@ Version:	%perl_convert_version %{upstream_version}
 Release:	4
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Capture::Tiny
+Url:		https://metacpan.org/pod/Capture::Tiny
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
