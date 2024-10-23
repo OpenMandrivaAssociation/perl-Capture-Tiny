@@ -1,14 +1,13 @@
 %define upstream_name    Capture-Tiny
-%define upstream_version 0.48
 
 Summary:	Capture STDOUT and STDERR from Perl, XS or external programs
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
+Version:	0.48
 Release:	5
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Capture::Tiny
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/%{upstream_name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Exporter)
@@ -16,6 +15,7 @@ BuildRequires:	perl(File::Spec)
 BuildRequires:	perl(File::Temp)
 BuildRequires:	perl(IO::Handle)
 BuildRequires:	perl(Module::Build::Compat)
+BuildRequires:	perl(PerlIO::scalar)
 BuildRequires:	perl-devel
 
 %description
@@ -31,17 +31,17 @@ provides similar functionality without the ability to tee output and with
 more complicated code and API.
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
-%make test
+%make_build test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README Changes LICENSE
