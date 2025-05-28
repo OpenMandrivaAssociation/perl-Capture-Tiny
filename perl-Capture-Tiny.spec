@@ -2,8 +2,8 @@
 
 Summary:	Capture STDOUT and STDERR from Perl, XS or external programs
 Name:		perl-%{upstream_name}
-Version:	0.48
-Release:	5
+Version:	0.50
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Capture::Tiny
